@@ -6,4 +6,4 @@ Responsive Front-end technologies: Bootstrap3, CSS, JS
 
 * module 3: [https://vad2der.github.io/CourseraWebDev/module3/index.html](https://vad2der.github.io/CourseraWebDev/module3/index.html)  Check on the range of display sizes.
 
-* module 4: [https://vad2der.github.io/CourseraWebDev/module4/index.html](https://vad2der.github.io/CourseraWebDev/module4/index.html)  Consol only stuff.
+* module 4: [https://vad2der.github.io/CourseraWebDev/module4/index.html](https://vad2der.github.io/CourseraWebDev/module4/index.html)  Console only stuff.
