@@ -28,7 +28,7 @@ assignment.
 WARNING!!! WARNING!!!
 
 */
-
+(function () {
 // STEP 1:
 // Wrap the entire contents of script.js inside of an IIFE
 // See Lecture 52, part 2
@@ -64,3 +64,4 @@ for (var name in names) {
     helloSpeaker.speak(names[name])
   }
 }
+})();
