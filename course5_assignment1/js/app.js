@@ -1,20 +1,38 @@
 (function () {
 'use strict';
 
-angular.module('MsgApp', [])
-.controller('MsgController', MsgController);
+angular.module('LunchCheck', [])
+.controller('LunchCheckController', LunchCheckController);
 
-MsgController.$inject = ['$scope'];
-function MsgController($scope) {
-  $scope.name = "Yaakov";
-  $scope.stateOfBeing = "hungry";
+LunchCheckController.$inject = ['$scope'];
+function LunchCheckController($scope) {
+  $scope.dishes = "";
+  $scope.message = "";
 
-  $scope.sayMessage = function () {
-    return "Yaakov likes to eat healthy snacks at night!";
+  var sayMessage = function (msg, type) {
+    $scope.message = msg;
+    $scope.message_type = type+"_message";
   };
 
-  $scope.feedYaakov = function () {
-    $scope.stateOfBeing = "fed";
+  $scope.checkDishes = function () {
+    $scope.message = "";
+    var ListOfDishes = $scope.dishes.split(",");
+    var numOfDishes = 0;
+    var refinedListOfDishes = [];
+    for(var dish_num in ListOfDishes){
+      if (ListOfDishes[dish_num] != ""){
+        refinedListOfDishes.push(ListOfDishes[dish_num]);
+      }
+    }
+    numOfDishes = refinedListOfDishes.length;
+    if(numOfDishes === 0){
+      sayMessage("Please enter data first", "red");
+    }else if (numOfDishes < 4) {
+      sayMessage("Enjoy!", "green_enjoy");
+    }else if (numOfDishes >= 4) {
+      sayMessage("Too much!", "green");
+    }
+    $scope.dishes = "";
   };
 }
 

@@ -1,0 +1,30 @@
+.message {
+  border-style: none;
+  border-radius: .3em;
+  text-indent: .7em;
+  width: auto;
+}
+
+#red_message {
+  color: red;
+  border-style: solid;
+  border-width: thin;
+  border-color: red;
+  width: 15em;
+}
+
+#green_message {
+  color: green;
+  border-style: solid;
+  border-width: thin;
+  border-color: green;
+  width: 8em;
+}
+
+#green_enjoy_message {
+  color: green;
+  border-style: solid;
+  border-width: thin;
+  border-color: green;
+  width: 5em;
+}
