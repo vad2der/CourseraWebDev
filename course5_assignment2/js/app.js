@@ -4,20 +4,19 @@
 angular.module('ControllerAsApp', [])
 .controller('ShoppingListController1', ShoppingListController1)
 .controller('ShoppingListController2', ShoppingListController2)
-.factory('ShoppingListFactory', ShoppingListFactory);
+.service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
 // LIST #1 - controller
-ShoppingListController1.$inject = ['ShoppingListFactory'];
-function ShoppingListController1(ShoppingListFactory) {
+ShoppingListController1.$inject = ['ShoppingListCheckOffService'];
+function ShoppingListController1(ShoppingListCheckOffService) {
   var list1 = this;
 
   // Use factory to create new shopping list service
-  var shoppingList = ShoppingListFactory();
 
-  list1.items = shoppingList.getItems()[0];
+  list1.items = ShoppingListCheckOffService.getItems()[0];
 
   list1.switchItemBasket = function (itemIndex) {
-    shoppingList.switchItemBasket(itemIndex);
+    ShoppingListCheckOffService.switchItemBasket(itemIndex);
   };
 
   list1.checkList = function(){
@@ -27,19 +26,17 @@ function ShoppingListController1(ShoppingListFactory) {
   }
 }
 
-
 // LIST #2 - controller
-ShoppingListController2.$inject = ['ShoppingListFactory'];
-function ShoppingListController2(ShoppingListFactory) {
+ShoppingListController2.$inject = ['ShoppingListCheckOffService'];
+function ShoppingListController2(ShoppingListCheckOffService) {
   var list2 = this;
 
   // Use factory to create new shopping list service
-  var shoppingList = ShoppingListFactory();
-
-  list2.items = shoppingList.getItems()[1];
+  
+  list2.items = ShoppingListCheckOffService.getItems()[1];
 
   list2.refreshItems = function (){
-    list2.items = shoppingList.getItems()[1];
+    list2.items = ShoppingListCheckOffService.getItems()[1];
   };
 
   list2.checkList = function(){
@@ -51,16 +48,16 @@ function ShoppingListController2(ShoppingListFactory) {
   }
 }
 
+// Service
+function ShoppingListCheckOffService() {
+  var service = this;
+
   var items = [[{ name: "cookie", quantity: 10 },
                       { name: "book", quantity: 2 },
                       { name: "light bulb", quantity: 3 },
                       { name: "water pack", quantity: 1 },
                       { name: "duck", quantity: 1 }],
                 []];
-// Service
-function ShoppingListService() {
-  var service = this;
-
   // List of shopping items
   service.switchItemBasket = function (itemIndex) {
     var the_item = items[0][itemIndex];
@@ -71,15 +68,6 @@ function ShoppingListService() {
   service.getItems = function () {
     return items;
   };
-}
-
-
-function ShoppingListFactory() {
-  var factory = function () {
-    return new ShoppingListService();
-  };
-
-  return factory;
 }
 
 })();
