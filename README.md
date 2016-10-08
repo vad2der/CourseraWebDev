@@ -12,4 +12,6 @@ Responsive Front-end technologies: Bootstrap3, CSS, JS
 
 ## AngularJS
 
-* module 1: [https://vad2der.github.io/CourseraWebDev/course5_assignment1/index.html] (https://vad2der.github.io/CourseraWebDev/course5_assignment1/index.html) Data binding, $scope, $inject (Dependency injection), IIFE
+* module 1: [https://vad2der.github.io/CourseraWebDev/course5_assignment1/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment1/index.html) Data binding, $scope, $inject (Dependency injection), IIFE
+
+* module 2: [https://vad2der.github.io/CourseraWebDev/course5_assignment2/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment2/index.html) $service, singleton & factory patterns
