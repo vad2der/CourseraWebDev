@@ -40,32 +40,28 @@ function ShoppingListController2(ShoppingListFactory) {
 
   list2.refreshItems = function (){
     list2.items = shoppingList.getItems()[1];
-    console.log(list2.items);
   };
-  list2.refreshItems();
+
   list2.checkList = function(){
     if (list2.items.length === 0){
       list2.message = "Nothing bought yet";
     } else{
-      list2.message = undefined;
+      delete list2.message;
     };
-
   }
 }
 
-
-// Service
-function ShoppingListService() {
-  var service = this;
-
-  // List of shopping items
   var items = [[{ name: "cookie", quantity: 10 },
                       { name: "book", quantity: 2 },
                       { name: "light bulb", quantity: 3 },
                       { name: "water pack", quantity: 1 },
                       { name: "duck", quantity: 1 }],
                 []];
+// Service
+function ShoppingListService() {
+  var service = this;
 
+  // List of shopping items
   service.switchItemBasket = function (itemIndex) {
     var the_item = items[0][itemIndex];
     items[0].splice(itemIndex, 1);
