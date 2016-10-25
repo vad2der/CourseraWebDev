@@ -34,7 +34,7 @@ function NarrowItDownController(MenuSearchService) {
       menu.foundBool = true;
       if (menu.found.length == 0){
         menu.nothingFound = true;
-      }else {menu.nothingFound = false;        
+      } else {menu.nothingFound = false;        
       };
       menu.clearSearchParam();
     })
