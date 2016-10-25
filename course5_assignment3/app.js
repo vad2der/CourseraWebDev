@@ -14,6 +14,9 @@ function foundItemsDirective() {
       items: '<',
       onRemove: '&'
     },
+    controller: NarrowItDownController,
+    controllerAs: 'menu',
+    bindToController: true
   };
 
   return ddo;
