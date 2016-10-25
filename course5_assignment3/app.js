@@ -11,7 +11,7 @@ function foundItemsDirective() {
   var ddo = {
     templateUrl: 'menuItemList.html',
     scope: {
-      items: '<',
+      found: '<',
       onRemove: '&'
     }
   };
