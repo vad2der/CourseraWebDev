@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Menu Search</title>
   </head>
   <body>
     <h1>Menu Search</h1>
 
     <div ng-controller='NarrowItDownController as menu'>    
-      
-      <input type="text" ng-model="menu.searchParam" placeholder="Search Item Menu">
-      <button ng-click="menu.searchItems();">Narrow It Down For Me!</button>
-      <span ng-if="menu.foundBool"> found: {{menu.found.length}} item(s)</span>
+      <div id="myinp" class="input-group">
+        <input class="form-control" type="text" ng-model="menu.searchParam" placeholder="Search Item Menu">
+        <div class="input-group-btn">
+          <button class="btn" ng-click="menu.searchItems();">Narrow It Down For Me!</button>
+          <span class="input-group-addition" ng-if="menu.foundBool"> found: {{menu.found.length}} item(s)</span>
+        </div>
+      </div>
       <div class="error" ng-if="menu.nothingFound">Nothing found</div>
       <found-items
          found="menu.found"         

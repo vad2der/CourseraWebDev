@@ -1,0 +1,10 @@
+body {
+  font-size: 1.2em;
+}
+
+#myinp {
+  width: 30%;
+
+.error {
+  color: red;
+}
