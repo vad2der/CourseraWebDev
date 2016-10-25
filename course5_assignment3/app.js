@@ -30,7 +30,7 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (result) {
       menu.found  = result;
       menu.foundBool = true;
-      if (menu.found.length == 0){menu.error = true};
+      if (menu.found.length == 0){menu.nothingFound = true};
     })
     .catch(function (error) {
       console.log(error);
