@@ -23,6 +23,8 @@ function foundItemsDirective() {
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var menu = this;
+  menu.foundBool = false;
+  menu.nothingFound = false;
   menu.searchParam = "";
 
   menu.searchItems = function () {    
@@ -30,7 +32,8 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (result) {
       menu.found  = result;
       menu.foundBool = true;
-      if (menu.found.length == 0){menu.nothingFound = true};
+      if (menu.found.length == 0){
+        menu.nothingFound = true};
     })
     .catch(function (error) {
       console.log(error);
