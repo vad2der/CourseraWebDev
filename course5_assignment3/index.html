@@ -16,10 +16,11 @@
         <input class="form-control" type="text" ng-model="menu.searchParam" placeholder="Search Item Menu">
         <div class="input-group-btn">
           <button class="btn" ng-click="menu.searchItems();">Narrow It Down For Me!</button>
-          <span class="input-group-addition" ng-if="menu.foundBool"> found: {{menu.found.length}} item(s)</span>
+          
         </div>
+        <span class="input-group-addon" id="basic-addon" ng-if="menu.foundBool"> found: {{menu.found.length}} item(s)</span>
       </div>
-      <div class="error" ng-if="menu.nothingFound">Nothing found</div>
+      <div class="alert alert-danger" ng-if="menu.nothingFound">Nothing found</div>
       <found-items
          found="menu.found"         
          on-remove="menu.deleteThisItem(index)">
