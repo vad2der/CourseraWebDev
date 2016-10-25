@@ -33,11 +33,18 @@ function NarrowItDownController(MenuSearchService) {
       menu.found  = result;
       menu.foundBool = true;
       if (menu.found.length == 0){
-        menu.nothingFound = true};
+        menu.nothingFound = true;
+      }else {menu.nothingFound = false;        
+      };
+      menu.clearSearchParam();
     })
     .catch(function (error) {
       console.log(error);
     })
+  };
+
+  menu.clearSearchParam = function(){
+    menu.searchParam = "";
   };
 
   menu.deleteThisItem = function(itemIndex){
