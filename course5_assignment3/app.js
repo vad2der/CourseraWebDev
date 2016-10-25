@@ -67,7 +67,8 @@ function MenuSearchService($http, ApiBasePath) {
       if (searchParam != undefined){
         for (var r_ind in result.data.menu_items){          
           if (result.data.menu_items[r_ind].description.toString().toLowerCase().includes(searchParam.toString().toLowerCase()) 
-            || result.data.menu_items[r_ind].name.toString().toLowerCase().includes(searchParam.toString().toLowerCase())){
+            //|| result.data.menu_items[r_ind].name.toString().toLowerCase().includes(searchParam.toString().toLowerCase())
+            ){
             foundItems.push(result.data.menu_items[r_ind]);
           };
         };  
