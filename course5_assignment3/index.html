@@ -15,7 +15,7 @@
       <input type="text" ng-model="menu.searchParam" placeholder="Search Item Menu">
       <button ng-click="menu.searchItems();">Narrow It Down For Me!</button>
       <span ng-if="menu.foundBool"> found: {{menu.found.length}} item(s)</span>
-
+      <div class="error" ng-if="menu.nothingFound">Nothing found</div>
       <found-items
          found="menu.found"         
          on-remove="menu.deleteThisItem(index)">
