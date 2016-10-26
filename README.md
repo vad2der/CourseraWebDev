@@ -17,4 +17,4 @@ Responsive Front-end technologies: Bootstrap3, CSS, JS
 * module 2: [https://vad2der.github.io/CourseraWebDev/course5_assignment2/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment2/index.html) $service, singleton pattern
 
 * module 3: [https://vad2der.github.io/CourseraWebDev/course5_assignment3/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment3/index.html)
-$http, directive
+$http, directive, promise
