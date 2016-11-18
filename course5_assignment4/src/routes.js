@@ -20,8 +20,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Premade list page
-  .state('mainList', {
-    url: '/main-list',
+  .state('mainCategory', {
+    url: '/main-category',
     templateUrl: 'src/menuapp/templates/main-category.template.html',
     controller: 'MainCategoryController as mainCategory',
     resolve: {
