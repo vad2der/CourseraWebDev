@@ -2,7 +2,8 @@
 'use strict';
 
 angular.module('Data')
-.service('MenuDataService', MenuDataService);
+.service('MenuDataService', MenuDataService)
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com/");
 
 
 MenuDataService.$inject = ['$q', '$http']
@@ -11,23 +12,27 @@ function MenuDataService($q, $http) {
 
   // List of shopping items
   var items = [];
-
+  var deferred = $q.defer();
   // Simulates call to server
   // Returns a promise, NOT items array directly
   service.getAllCategories = function () {
-    var deferred = $q.defer();
-
-    // Wait 2 seconds before returning
-    $timeout(function () {
-      // deferred.reject(items);
-      deferred.resolve(items);
-    }, 800);
-
-    return deferred.promise;
+    var promise = $http({
+      method: "GET",
+      url: (ApiBasePath + "/categories.json")
+    });
+    promise.then(function(result){      
+      deferred.resolve(result.data);
+    });
   };
 
   service.getItemsForCategory = function(categoryShortName) {
-
+    var promise = $http({
+      method: "GET",
+      url: (ApiBasePath + "/menu_items.json?category="+categoryShortName)
+    });
+    promise.then(function(result){      
+      deferred.resolve(result.data);
+    });
   };
 }
 
