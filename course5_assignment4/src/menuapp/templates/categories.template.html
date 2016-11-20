@@ -1,4 +1,10 @@
-<ul>
-    <li ng-repeat="c in $ctrl.list"><a ui-sref="items({categoryShortName: c.short_name })">{{c.name}}</a></li>
-</ul>
-
+<div class="panel panel-default">
+	<div class=panel-heading>
+		<h3><a ui-sref="home">Home </a> &lt; <span>Categories</span></h3>
+	</div>
+  <div class="panel-body">
+		<ul class=list-group>
+   			<a class=list-group-item ng-repeat="c in $ctrl.list" ui-sref="items({categoryShortName: c.short_name })">{{c.name}}</a>    	
+		</ul>
+	</div>
+</div>

@@ -2,14 +2,19 @@
 <html ng-app='MenuApp'>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Menu Application</title>
   </head>
   <body>
-    <h1>Welcome to our Restaurant</h1>
-
-    <ui-view></ui-view>
-
+    <div class=row>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <h1>Welcome to our Restaurant</h1>        
+                <ui-view></ui-view>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    </div>
     <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
