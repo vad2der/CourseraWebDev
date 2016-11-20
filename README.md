@@ -18,3 +18,6 @@ Responsive Front-end technologies: Bootstrap3, CSS, JS
 
 * module 3: [https://vad2der.github.io/CourseraWebDev/course5_assignment3/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment3/index.html)
 $http, directive, promise
+
+* module 4: [https://vad2der.github.io/CourseraWebDev/course5_assignment4/index.html](https://vad2der.github.io/CourseraWebDev/course5_assignment4/index.html)
+$http, component, angular-ui-route, route.state
