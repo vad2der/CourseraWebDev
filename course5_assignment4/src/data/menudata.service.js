@@ -16,6 +16,7 @@ function MenuDataService($http, ApiBasePath) {
       url: (ApiBasePath + "/categories.json")
     }).then(function(result){      
       return result.data;
+
     });
   };
 

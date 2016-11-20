@@ -2,10 +2,10 @@
 'use strict';
 
 angular.module('MenuApp')
-.component('categories', {
+.component('categoriesComponent', {
   templateUrl: 'src/menuapp/templates/categories.template.html',
   bindings: {
-    items: '<'
+    list: '<',//spend 3 hours looking for a mistake - this comma
   }
 });
 

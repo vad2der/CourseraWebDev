@@ -15,7 +15,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // *** Set up UI states ***
   $stateProvider
-
   // Home page
   .state('home', {
     url: '/',
@@ -28,7 +27,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'src/menuapp/templates/main-categories.template.html',
     controller: 'MainCategoryController as mainCategories',    
     resolve: {
-      data: ['MenuDataService', function (MenuDataService) {
+      categories: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
@@ -36,9 +35,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   .state('items', {
     url: '/items/{categoryShortName}',
-    //templateUrl: 'src/menuapp/templates/items.template.html',
-    controller: 'ItemDetailController',
-    controllerAs: 'ctrl',
+    templateUrl: 'src/menuapp/templates/main-item.template.html',
+    controller: 'ItemDetailController as ctrl',
     resolve: {
       items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
         return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
