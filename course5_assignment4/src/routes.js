@@ -2,7 +2,10 @@
 'use strict';
 
 angular.module('MenuApp')
-.config(RoutesConfig);
+.config(RoutesConfig)
+.run(function($rootScope) {
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});
 
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
@@ -20,24 +23,25 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Premade list page
-  .state('mainCategory', {
-    url: '/main-category',
-    templateUrl: 'src/menuapp/templates/main-category.template.html',
-    controller: 'MainCategoryController as mainCategory',
+  .state('categories', {
+    url: '/categories',
+    templateUrl: 'src/menuapp/templates/main-categories.template.html',
+    controller: 'MainCategoryController as mainCategories',    
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
+      data: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
   })
 
-  .state('itemDetail', {
-    url: '/item-detail/{itemId}',
-    templateUrl: 'src/menuapp/templates/item-detail.template.html',
-    controller: "ItemDetailController as itemDetail",
+  .state('items', {
+    url: '/items/{categoryShortName}',
+    //templateUrl: 'src/menuapp/templates/items.template.html',
+    controller: 'ItemDetailController',
+    controllerAs: 'ctrl',
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.getItemsForCategory($stateParams.itemId);
+      items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+        return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
       }]
     }
   });
