@@ -4,15 +4,9 @@ body {
   background-color: white;
   font-family: 'Oxygen', sans-serif;
 }
-
-#t1 {
-  min-width: 20%; 
-  max-width: 20%;  
-}
-
-#t2 {  
-  min-width: 75%; 
-  max-width: 75%;
+ul  li  div {
+  min-width: 100%;
+  width: 100%;
 }
 
 /** HEADER **/
