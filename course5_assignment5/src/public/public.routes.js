@@ -45,7 +45,7 @@ function routeConfig ($stateProvider) {
       url: '/my-info',
       templateUrl: 'src/public/user/my-ifo.html',
       controller: 'MyInfoController',
-      controllerAs: 'accountCntl',
+      controllerAs: 'accountCtrl',
       resolve: {
         account: ['AccountService', function(AccountService){
           return AccountService.getAccount();
@@ -56,7 +56,7 @@ function routeConfig ($stateProvider) {
       url: 'sign-up',
       templateUrl: 'src/public/user/sign-up.html',
       controller: 'SignUpController',
-      controllerAs: 'SignUpCtrl',
+      controllerAs: 'signUpCtrl',
     });
 }
 })();
