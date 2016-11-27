@@ -3,6 +3,7 @@
 		<h3><a ui-sref="home">Home </a> &lt; <a ui-sref="categories">Categories </a> &lt; <span>Items list</span></h3>
 	<div class="panel-body">
 		<ul class="list-group media-list">
+<<<<<<< HEAD
   			<li class="list-group-item media">    			
     			<div id=t1 class=media-body><h3 class=media-heading>Item name(short name):</h3></div>
 				<div id=t2 class=media-body><h3 class=media-heading>Item description:</h3> </div>
@@ -10,6 +11,11 @@
   			<li class="list-group-item media" ng-repeat="item in $ctrl.list">  		
     			<div id=t1 class=media-body>{{ item.name }} ({{ item.short_name }})</div>
 				<div id=t2 class=media-body>{{ item.description }}</div>
+=======
+  			<li class="list-group-item media" ng-repeat="item in $ctrl.list">  		
+    			<div><h3>({{ item.short_name }}) {{ item.name }}</h3></div>
+				<div class=media-body>{{ item.description }}</div>
+>>>>>>> 023a8d9c1cab87db772851f73a23a1e4a50aaf9a
   			</li>
   		</ul>
 	</div>
