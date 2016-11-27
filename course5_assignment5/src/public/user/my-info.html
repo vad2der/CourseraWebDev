@@ -1,0 +1,53 @@
+<div class=container>
+	<div class=row>
+		<h2>Your Info</h2>
+
+
+		<div class="alert alert-danger" ng-if="accountCtrl.account == null">
+		  	<span>Not Signed Up Yet</span>
+		  	<a ui-sref="public.sign-up">
+                  <buttton class="btn btn-default">
+                  	<span class="glyphicon glyphicon-plus"></span>
+                  	Sign up Now!
+                  </buttton>
+            </a>              
+		</div>		
+		<div ng-if="accountCtrl.account != null">
+			
+			<ul class="list-group">
+				<!-- First Name -->
+				<li class="list-group-item">
+	    			<h4 id=black_color >First Name:      </h4><br>
+	          		<span>{{accountCtrl.account.firstName}}</span>
+	  			</li>
+
+				<!-- Last Name -->
+				<li class="list-group-item">	    			
+	    			<h4>Last Name:       </h4><br>
+	          		<span>{{accountCtrl.account.lastName}}</span>
+	  			</li>
+
+				<!-- Email -->
+				<li class="list-group-item">
+	    			<h4>Email:  	       </h4><br>
+	          		<span>{{accountCtrl.account.email}}</span>
+	  			</li>
+
+	  			<!-- Phone -->
+				<li class="list-group-item">
+	    			<h4>Phone:           </h4><br>
+	          		<span>{{accountCtrl.account.phoneNumber}}</span>
+	  			</li>
+
+	  			<!-- Dish -->
+				<li class="list-group-item">	    			
+	    			<h4>Favorite Dish:</h4><br>
+	          		<p>{{accountCtrl.account.favoriteDish.name}}</p>
+	          		<p><img class="img-responsive" width="250" height="150" ng-src="{{accountCtrl.account.path}}/images/{{accountCtrl.account.favoriteDish.short_name}}.jpg" alt="{{accountCtrl.account.favoriteDish.name}}"></p>
+	          		<p>{{accountCtrl.account.favoriteDish.description}}</p>
+	  			</li>
+	  		</ul>
+		</div>
+
+	</div>
+</div>

@@ -14,12 +14,12 @@
 		signUpCtrl.itemNotFound = false;
 
 		signUpCtrl.submit = function(){
-			if(signUpCtrl.account.favoriteCategory){
-				signUpCtrl.account.favoriteCategory = signUpCtrl.account.favoriteCategory.toUpperCase();
+			if(signUpCtrl.account.favoriteDish){
+				signUpCtrl.account.favoriteDish = signUpCtrl.account.favoriteDish.toUpperCase();
 			};
-			MenuService.getMenuItems(signUpCtrl.account.favoriteCategory)
+			MenuService.getMenuItems(signUpCtrl.account.favoriteDish)
 					   .then(function(response){
-					   			signUpCtrl.account.favoriteCategory = response.data;
+					   			signUpCtrl.account.favoriteDish = response.data;
 					   			signUpCtrl.updated = true;
 					   			$scope.signUpForm.$setUntouched();
 					   			signUpCtrl.itemNotFound = false;
@@ -29,6 +29,7 @@
     							signUpCtrl.itemNotFound = true;
   							}
   						);
+			AccountService.setAccount(signUpCtrl.account);
 		};
 	};
 })();

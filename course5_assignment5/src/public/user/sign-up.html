@@ -18,10 +18,10 @@
 				<li class="list-group-item">
 	    			<input type="text" class="form-control" placeholder="Last Name" name=lastName ng-model=signUpCtrl.account.lastName required minlength=2 ng-maxlength=12>
 	    			<span ng-if="(signUpForm.lastName.$error.minlength || signUpForm.lastName.$error.required) && signUpForm.lastName.$touched" class="alert alert-danger">
-	            		First Name required and must be at least 2 characters long
+	            		Last Name required and must be at least 2 characters long
 	          		</span>
 	          		<span ng-if="signUpForm.lastName.$error.maxlength && signUpForm.lastName.$touched" class="alert alert-danger">
-	            		First Name must not be longer than 10 characters
+	            		Last Name must not be longer than 10 characters
 	          		</span>
 	  			</li>
 
@@ -41,14 +41,14 @@
 	          		</span>
 	  			</li>
 
-	  			<!-- Dish Category -->
+	  			<!-- Dish -->
 				<li class="list-group-item">
-	    			<input type="text" class="form-control" placeholder="Your Favorite Dish Category" name=favoriteCategory ng-model=signUpCtrl.account.favoriteCategory required>
-	    			<span ng-if="signUpForm.favoriteCategory.$touched && signUpForm.favoriteCategory.$error.required" class="alert alert-danger">
-	            		Favorite Dish Category is required
+	    			<input type="text" class="form-control" placeholder="Your Favorite Dish Category" name=favoriteDish ng-model=signUpCtrl.account.favoriteDish required>
+	    			<span ng-if="signUpForm.favoriteDish.$touched && signUpForm.favoriteDish.$error.required" class="alert alert-danger">
+	            		Favorite Dish is required
 	          		</span>
 	          		<span ng-if="signUpCtrl.itemNotFound" class="alert alert-danger">
-	            		No such Dish Category found. {{signUpCtrl.itemNotFound}}
+	            		No such Dish found. {{signUpCtrl.itemNotFound}}
 	          		</span>
 	  			</li>
 
@@ -62,7 +62,7 @@
 		  		<!-- Messages -->
 		  		<li class=list-group-item> 
 		  			<div class="alert alert-success" ng-if=signUpCtrl.updated>
-		  				<span>Your information has been Saved/Updated</span>
+		  				<span>Your information has been saved</span>
 		  			</div>
 		  		</li>
 
