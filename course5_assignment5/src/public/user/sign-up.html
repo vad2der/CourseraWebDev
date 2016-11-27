@@ -1,0 +1,72 @@
+<div class=container>
+	<div class=row>
+		<h2>Sign Up for our newsletters!</h2>
+		<form name="signUpForm" class="navbar-form navbar-left" novalidate>
+			<!-- First Name -->
+			<ul class="list-group">
+				<li class="list-group-item">
+	    			<input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="signUpCtrl.account.firstName" required minlength="4" ng-maxlength="12">
+	    			<span ng-if="(signUpForm.firstName.$error.minlength || signUpForm.firstName.$error.required) && signUpForm.firstName.$touched" class="alert alert-danger">
+	            		First Name required and must be at least 4 characters long
+	          		</span>
+	          		<span ng-if="signUpForm.firstName.$error.maxlength && signUpForm.firstName.$touched" class="alert alert-danger">
+	            		First Name must not be longer than 10 characters
+	          		</span>
+	  			</li>
+
+				<!-- Last Name -->
+				<li class="list-group-item">
+	    			<input type="text" class="form-control" placeholder="Last Name" name=lastName ng-model=signUpCtrl.account.lastName required minlength=2 ng-maxlength=12>
+	    			<span ng-if="(signUpForm.lastName.$error.minlength || signUpForm.lastName.$error.required) && signUpForm.lastName.$touched" class="alert alert-danger">
+	            		First Name required and must be at least 2 characters long
+	          		</span>
+	          		<span ng-if="signUpForm.lastName.$error.maxlength && signUpForm.lastName.$touched" class="alert alert-danger">
+	            		First Name must not be longer than 10 characters
+	          		</span>
+	  			</li>
+
+				<!-- Email -->
+				<li class="list-group-item">
+	    			<input type="email" class="form-control" name="email" placeholder="Email" ng-model="signUpCtrl.account.email" required>
+	          		<span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched" class="alert alert-danger">
+	            		Must be a valid email address: handle@domain.com format
+	          		</span>
+	  			</li>
+
+	  			<!-- Phone -->
+				<li class="list-group-item">
+	    			<input type="text" class="form-control" placeholder="Phone Number" name=phoneNumber ng-model=signUpCtrl.account.phoneNumber required pattern="(\d{3})-(\d{3})-(\d{4})">
+	    			<span ng-if="(signUpForm.phoneNumber.$invalid && signUpForm.phoneNumber.$touched) || (signUpForm.phoneNumber.$touched && signUpForm.phoneNumber.$error.required)" class="alert alert-danger">
+	            		Phone is required and format is ###-###-####
+	          		</span>
+	  			</li>
+
+	  			<!-- Dish Category -->
+				<li class="list-group-item">
+	    			<input type="text" class="form-control" placeholder="Your Favorite Dish Category" name=favoriteCategory ng-model=signUpCtrl.account.favoriteCategory required>
+	    			<span ng-if="signUpForm.favoriteCategory.$touched && signUpForm.favoriteCategory.$error.required" class="alert alert-danger">
+	            		Favorite Dish Category is required
+	          		</span>
+	          		<span ng-if="signUpCtrl.itemNotFound" class="alert alert-danger">
+	            		No such Dish Category found. {{signUpCtrl.itemNotFound}}
+	          		</span>
+	  			</li>
+
+	  			<!-- Button -->
+	  			<li class=list-group-item>
+	  				<div ng-if="!signUpCtrl.updated">	  				
+		  				<button type="submit" ng-disabled=signUpForm.$invalid class="btn btn-default" ng-click=signUpCtrl.submit()>Submit</button>
+		  			</div>
+	  			</li>
+
+		  		<!-- Messages -->
+		  		<li class=list-group-item> 
+		  			<div class="alert alert-success" ng-if=signUpCtrl.updated>
+		  				<span>Your information has been Saved/Updated</span>
+		  			</div>
+		  		</li>
+
+	  		</ul>
+		</form>
+	</div>
+</div>
